@@ -23,3 +23,13 @@ plt.xlabel('Valores')
 plt.ylabel('Frecuencia')
 plt.title('Histograma de ' + M_S)
 plt.show()
+
+# Nombre de la columna a graficar
+A_O = 'Application order'
+
+# Crear el histograma
+plt.hist(df[A_O], bins=10)  # Puedes ajustar el número de bins según tus preferencias
+plt.xlabel('Valores')
+plt.ylabel('Frecuencia')
+plt.title('Histograma de ' + A_O)
+plt.show()
