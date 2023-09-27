@@ -14,16 +14,6 @@ plt.ylabel('Frecuencia')
 plt.title('Histogram of ' + N)
 plt.show()
 
-# Nombre de la columna a graficar
-D= 'Displaced'
-
-# Crear el histograma
-plt.hist(df[D], bins=10) 
-plt.xlabel('Valores')
-plt.ylabel('Frecuencia')
-plt.title('Histogram of ' + D)
-plt.show()
-
 
 # Nombre de la columna a graficar
 Ed= 'Educational special needs'
