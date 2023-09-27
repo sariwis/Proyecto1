@@ -141,7 +141,7 @@ app.layout = html.Div([html.H1('¡Bienvenidos a la herramienta de Predicción de
         html.Div([
 
             html.Div([
-                html.Label('¿Usted será deudor?'),
+                html.Label('¿Usted o su familia asumirá una dedua para costear la universidad?'),
                 dcc.Dropdown(id='Deuda', options=[{'label':'Sí', 'value':1},{'label':'No', 'value':0}], placeholder='Deudor'),
             ], className='six columns', style={'margin-top': '10px'}),
             
