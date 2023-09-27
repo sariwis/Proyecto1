@@ -65,6 +65,16 @@ plt.ylabel('Frecuencia')
 plt.title('Histogram of ' + T)
 plt.show()
 
+# Nombre de la columna a graficar
+Dy= 'Daytime'
+
+# Crear el histograma
+plt.hist(df[Dy], bins=10) 
+plt.xlabel('Valores')
+plt.ylabel('Frecuencia')
+plt.title('Histogram of ' + Dy)
+plt.show()
+
 # Crear Piechart para edades
 bins = [0, 18.9, 20.9, 25.9, 30.9, 39.9, df["Age at enrollment"].max()]
 labels = ['17-18 años', '19-20 años', '21-25 años', '26-30 años', '31-39 años', '>40 años']
