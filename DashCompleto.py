@@ -19,6 +19,7 @@ from sklearn.metrics import accuracy_score
 import pandas as pd
 import plotly.express as px
 from pgmpy.inference import VariableElimination
+from sklearn.metrics import accuracy_score, confusion_matrix
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets, suppress_callback_exceptions=True)
@@ -144,6 +145,22 @@ def by_pred(MS, AO, C, PQ, AG, D, G, AE):
 
     accuracy = accuracy_score(y_real, y_p)
     print(accuracy)
+
+    
+    conf = confusion_matrix(y_real, y_p)
+
+    # Extraer verdaderos positivos, falsos positivos, verdaderos negativos y falsos negativos
+    VerdPos =conf[1, 1]
+    FalsoPos = conf[0, 1]
+    VerdNeg = conf[0, 0]
+    FalsoNeg = conf[1, 0]
+
+    print(VerdPos)
+    print(FalsoPos)
+    print(VerdNeg)
+    print(FalsoNeg)
+
+    print(conf)
 
     resp = infer.query(['target'], evidence={'MS': MS, 'AO': AO, 'C': C, 'PQ': PQ, 'AG': AG, 'D': D, 'G': G, 'AE': AE})
 
