@@ -75,6 +75,43 @@ plt.ylabel('Frecuencia')
 plt.title('Histogram of ' + Dy)
 plt.show()
 
+
+# Crear Piechart para las occupations
+
+columna = "Mother's occupation"
+
+occupation_counts = df[columna].value_counts()
+
+fig, ax = plt.subplots(figsize=(8, 6))
+
+wedges, texts, autotexts = ax.pie(occupation_counts.values, labels=None, autopct='', startangle=90, wedgeprops={'linewidth': 1, 'edgecolor': 'gray'})
+ax.axis('equal') 
+plt.title(f'Distribución de {columna}')
+legend_labels = [f'{label}: {count}' for label, count in zip(occupation_counts.index, occupation_counts.values)]
+legend = plt.legend(legend_labels, loc='center left', bbox_to_anchor=(-0.2, 0.5), ncol=2)  # Cambia ncol al número deseado de columnas
+
+for text in legend.get_texts():
+    text.set_fontsize(8)
+
+plt.show()
+
+columna = "Father's occupation"
+
+occupation_counts = df[columna].value_counts()
+
+fig, ax = plt.subplots(figsize=(8, 6))
+
+wedges, texts, autotexts = ax.pie(occupation_counts.values, labels=None, autopct='', startangle=90, wedgeprops={'linewidth': 1, 'edgecolor': 'gray'})
+ax.axis('equal') 
+plt.title(f'Distribución de {columna}')
+legend_labels = [f'{label}: {count}' for label, count in zip(occupation_counts.index, occupation_counts.values)]
+legend = plt.legend(legend_labels, loc='center left', bbox_to_anchor=(-0.2, 0.5), ncol=2)  # Cambia ncol al número deseado de columnas
+
+for text in legend.get_texts():
+    text.set_fontsize(8)
+
+plt.show()
+
 # Crear Piechart para edades
 bins = [0, 18.9, 20.9, 25.9, 30.9, 39.9, df["Age at enrollment"].max()]
 labels = ['17-18 años', '19-20 años', '21-25 años', '26-30 años', '31-39 años', '>40 años']
